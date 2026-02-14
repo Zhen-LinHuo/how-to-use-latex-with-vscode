@@ -1,0 +1,49 @@
+% ===== 关于文档格式、配置等设定的文件，非必要不需要调整 =====
+
+
+% ===== 基本文档类设置 =====
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{ctex}
+\usepackage{libertinus}
+\usepackage{listings}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{url}
+\usepackage{hyperref}
+% \usepackage{apacite}
+\usepackage{fancyhdr}
+\usepackage{geometry}
+\usepackage{setspace}
+\usepackage{caption}
+\usepackage{subcaption}
+
+% ===== 自定义变量 =====
+\newcommand{\myauthor}{杭州易成讯创电子科技有限公司}
+\newcommand{\mytitle}{装机手册}
+
+% ===== 页面设置 =====
+\geometry{margin=1in}
+\setlength{\parindent}{0.5in}
+\setlength{\parskip}{0pt}
+\onehalfspacing
+
+% ===== 超链接设置 =====
+\hypersetup{
+	colorlinks=false,
+	pdftitle={\mytitle},
+	pdfauthor={\myauthor},
+	% pdfsubject={Research Paper},
+	% pdfkeywords={keyword1, keyword2, keyword3},
+}
+
+% ===== 页眉页脚设置 =====
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{\parbox[b]{0.2\textwidth}{\raggedleft\myauthor}}
+\lhead{\parbox[b]{0.75\textwidth}{\raggedright\small\mytitle}}
+\cfoot{\thepage}
+
+% ===== 标题信息 =====
+\title{\mytitle}
+\author{\myauthor}
