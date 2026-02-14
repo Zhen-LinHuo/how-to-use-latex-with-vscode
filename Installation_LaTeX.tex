@@ -13,8 +13,20 @@
 
 虽然 TeX Live 官方建议通过在线安装程序来安装，但是因为网络原因，除非你位于海外地区，否则使用 ISO 镜像可以有效节省安装时间。
 
+在安装完 TeX Live 后，后续的升级就可通过 \lstinline!tlmgr update --all! 进行更新了。如果需要跨版本升级 (如从 TeX Live 2024 升级到 TeX Live 2025)，则最好删除或卸载已有的更新，然后直接安装新版本。一般来说 TeX Live 几乎不需要升级。
+
 \section{在 Windows 下安装 \LaTeX}
 \label{Installation_LaTeX_Windows}
+
+在下载上文提到的 ISO 镜像后，双击该 ISO 文件即可挂载。切换到挂载的镜像所在的目录，运行 install-tl-Windows.bat，指定安装目录后采用默认设置安装即可。
+
+依次使用以下指令查看是否有版本信息输出，从而确认安装是否成功：
+\begin{lstlisting}[language=bash]
+    xelatex --version
+    pdflatex --version
+    lualatex --version
+    latexmk --version
+\end{lstlisting}
 
 \section{在 Linux (RHEL 系发行版) 下安装 \LaTeX}
 \label{Installation_LaTeX_RHEL}
@@ -50,6 +62,14 @@
 
 \section{在 Linux (Debian 系发行版) 下安装 \LaTeX}
 \label{Installation_LaTeX_Debian}
+
+直接在终端执行 \lstinline[language=bash]!sudo apt install texlive-full! 进行安装，并依次使用以下指令查看是否有版本信息输出，从而确认安装是否成功：
+\begin{lstlisting}[language=bash]
+    xelatex --version
+    pdflatex --version
+    lualatex --version
+    latexmk --version
+\end{lstlisting}
 
 \section{在 MacOS 下安装 \LaTeX}
 \label{Installation_LaTeX_MacOS}
