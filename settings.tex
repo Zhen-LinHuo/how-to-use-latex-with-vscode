@@ -19,8 +19,8 @@
 \usepackage{subcaption}
 
 % ===== 自定义变量 =====
-\newcommand{\myauthor}{杭州易成讯创电子科技有限公司}
-\newcommand{\mytitle}{装机手册}
+\newcommand{\myauthor}{Zhen-Lin Huo}
+\newcommand{\mytitle}{如何通过 Visual Studio Code 使用 \LaTeX}
 
 % ===== 页面设置 =====
 \geometry{margin=1in}
@@ -35,6 +35,14 @@
 	pdfauthor={\myauthor},
 	% pdfsubject={Research Paper},
 	% pdfkeywords={keyword1, keyword2, keyword3},
+}
+
+% ===== lsting 设置 =====
+\lstset{
+    basicstyle=\ttfamily,
+    breaklines=true,
+    extendedchars=false, % 关键：设置为 false 避免 listings 尝试解析多字节字符
+    keepspaces=true
 }
 
 % ===== 页眉页脚设置 =====
