@@ -5,7 +5,10 @@
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage{ctex}
-\usepackage{libertinus}
+\usepackage{noto-serif}	% 衬线字体
+\usepackage{noto-sans}	% 非衬线字体
+\usepackage{FiraMono}	% 等宽字体
+\usepackage{xcolor}
 \usepackage{listings}
 \usepackage{graphicx}
 \usepackage{booktabs}
@@ -42,7 +45,16 @@
     basicstyle=\ttfamily,
     breaklines=true,
     extendedchars=false, % 关键：设置为 false 避免 listings 尝试解析多字节字符
-    keepspaces=true
+    keepspaces=true,
+	numbers=left,								% 在左侧显示行数
+	breaklines=true,							% 自动换行
+	numberstyle=\small\color[RGB]{192,192,192},	% 行号样式
+	backgroundcolor=\color[RGB]{245,245,244},	% 背景色
+	% 模仿 JetBrians 配色
+	keywordstyle=\color[RGB]{15,84,214},		% 关键字颜色
+	commentstyle=\color[RGB]{36,135,0},			% 注释颜色
+	stringstyle=\color[RGB]{140,108,65},		% 字符串颜色
+	rulesepcolor=\color[RGB]{107,41,186}		% 标号颜色
 }
 
 % ===== 页眉页脚设置 =====
