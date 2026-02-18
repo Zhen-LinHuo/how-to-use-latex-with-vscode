@@ -1,69 +1,44 @@
-% ===== 关于文档格式、配置等设定的文件，非必要不需要调整 =====
+% ===== Configuration File for This Document =====
+% DO NOT CHANGE UNLESS NECESSARY
 
 
-% ===== 基本文档类设置 =====
+% ===== Basic Configurations =====
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
-\usepackage{ctex}
-\usepackage{noto-serif}	% 衬线字体
-\usepackage{noto-sans}	% 非衬线字体
-\usepackage{FiraMono}	% 等宽字体
+\usepackage{noto-serif}	% Serif Font
+\usepackage{noto-sans}	% Sans Font
+\usepackage{FiraMono}	% Monospace Font
 \usepackage{xcolor}
 \usepackage{listings}
 \usepackage{graphicx}
 \usepackage{booktabs}
 \usepackage{url}
 \usepackage{hyperref}
-% \usepackage{apacite}
 \usepackage{fancyhdr}
 \usepackage{geometry}
 \usepackage{setspace}
 \usepackage{caption}
 \usepackage{subcaption}
 
-% ===== 自定义变量 =====
-\newcommand{\myauthor}{Zhen-Lin Huo}
-\newcommand{\mytitle}{如何通过 Visual Studio Code 使用 \LaTeX}
-
-% ===== 页面设置 =====
+% ===== Page Layout =====
 \geometry{margin=1in}
 \setlength{\parindent}{0.5in}
 \setlength{\parskip}{0pt}
 \onehalfspacing
 
-% ===== 超链接设置 =====
-\hypersetup{
-	colorlinks=false,
-	pdftitle={\mytitle},
-	pdfauthor={\myauthor},
-	% pdfsubject={Research Paper},
-	% pdfkeywords={keyword1, keyword2, keyword3},
-}
-
-% ===== lsting 设置 =====
+% ===== lsting Settings =====
 \lstset{
     basicstyle=\ttfamily,
     breaklines=true,
-    extendedchars=false, % 关键：设置为 false 避免 listings 尝试解析多字节字符
+    extendedchars=false, % IMPORTANT: For CJK letters
     keepspaces=true,
-	numbers=left,								% 在左侧显示行数
-	breaklines=true,							% 自动换行
-	numberstyle=\small\color[RGB]{192,192,192},	% 行号样式
-	backgroundcolor=\color[RGB]{245,245,244},	% 背景色
-	% 模仿 JetBrians 配色
-	keywordstyle=\color[RGB]{15,84,214},		% 关键字颜色
-	commentstyle=\color[RGB]{36,135,0},			% 注释颜色
-	stringstyle=\color[RGB]{140,108,65},		% 字符串颜色
-	rulesepcolor=\color[RGB]{107,41,186}		% 标号颜色
+	numbers=left,								% Show line number on the left
+	breaklines=true,							% Auto line break
+	numberstyle=\small\color[RGB]{192,192,192},	% Line number style
+	backgroundcolor=\color[RGB]{245,245,244},	% Background colour
+	% JetBrians-like Colour Scheme
+	keywordstyle=\color[RGB]{15,84,214},		% Keywords
+	commentstyle=\color[RGB]{36,135,0},			% Comments
+	stringstyle=\color[RGB]{140,108,65},		% Strings
+	rulesepcolor=\color[RGB]{107,41,186}		% Lables
 }
-
-% ===== 页眉页脚设置 =====
-\pagestyle{fancy}
-\fancyhf{}
-\rhead{\parbox[b]{0.2\textwidth}{\raggedleft\myauthor}}
-\lhead{\parbox[b]{0.75\textwidth}{\raggedright\small\mytitle}}
-\cfoot{\thepage}
-
-% ===== 标题信息 =====
-\title{\mytitle}
-\author{\myauthor}

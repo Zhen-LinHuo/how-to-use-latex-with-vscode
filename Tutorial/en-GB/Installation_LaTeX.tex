@@ -1,0 +1,75 @@
+\chapter{Install \LaTeX{}}
+\label{Installation_LaTeX}
+
+A recommended approach to install \LaTeX{} is to install TeX Live. \href{https://www.tug.org/texlive/quickinstall.html}{Full guide} can be found on its official website.
+
+A brief induction here:
+\begin{itemize}
+    \item For \textbf{Windows}, it is recommended to download \href{https://www.tug.org/texlive/acquire-iso.html}{ISO Image}. Mount the image and install via running the installer inside.
+    \item For \textbf{RHEL Linux Distribution} (e.g. RHEL, CentOS Stream, Rocky Linux, AlmaLinux, etc.), it is also good to install via ISO Image.
+    \item For \textbf{Debian Linux Distribution} (e.g. Debian, Ubuntu, Kubuntu, Xubuntu, Linux Mint, etc.), can just run \lstinline[language=bash]!sudo apt install texlive-full! in terminal to install.
+    \item For \textbf{MacOS \& MacOSX}, it is recommended to install \href{https://www.tug.org/mactex/}{MacTeX}, which has full content of TeX Live, and some extra content especially for Mac users.
+\end{itemize}
+
+Although TeX Live official recommends to install with online installer, but unless your internet environment is good enough, install with ISO Image can usually save your time.
+
+Once you installed TeX Live, future update can be run with \lstinline!tlmgr update --all! If you want cross-version (e.g. from TeX Live 2024 to TeX Live 2025), it is better to uninstall/remove old version and directly install the new version. In generall, TeX Live almost do not need update or upgrade.
+
+\section{Install \LaTeX{} on Windows}
+\label{Installation_LaTeX_Windows}
+
+Mount the ISO Image mentioned above by double-click it. Switch to to Image path, and run the file \texttt{install-tl-Windows.bat}. Generally, just specify the installation location, and keep all other settings as default is enough.
+
+Run following commands in terminal, check if they successfully show version detail to double-check wether installation is successful:
+\begin{lstlisting}[language=bash]
+    xelatex --version
+    pdflatex --version
+    lualatex --version
+    latexmk --version
+\end{lstlisting}
+
+\section{install \LaTeX{} in RHEL Linux Distributions}
+\label{Installation_LaTeX_RHEL}
+
+Mount the ISO Image mentioned above by double-click it. Switch to to Image path, right click to open terminal there. Then, run following commands:
+\begin{lstlisting}[language=bash]
+    sudo perl ./install-tl --no-interaction
+\end{lstlisting}
+
+Type your password, and then the installer will start installation as adminstrator.
+
+After installation, it is necessary to add TeX Live path to PATH for system and other software's use. One reliable apprach is to change environment variables of current user via \lstinline[language=bash]!sudo nano ~/.bashrc!. Add new line at the end with these content:
+\begin{lstlisting}
+    export PATH=<TeX Live Installation Path>:$PATH
+    export MANPATH=/usr/share/man:<man Path of TeX Live>:$MANPATH
+    export INFOPATH=<info Path of TeX Live>:$INFOPATH
+\end{lstlisting}
+
+For instance, when installing on Inter x86-64 machine, the content should be:
+\begin{lstlisting}
+    export PATH=$PATH:/usr/local/texlive/2025/bin/x86_64-linux:$PATH
+    export MANPATH=/usr/share/man:/usr/local/texlive/2025/texmf-dist/doc/man:$MANPATH
+    export INFOPATH=/usr/local/texlive/2025/texmf-dist/doc/info:$INFOPATH
+\end{lstlisting}
+
+Then, run \lstinline[language=bash]!source ~/.bashrc! to refresh environment variables, and install necessary perl packages with \lstinline[language=bash]!sudo dnf install perl-core perl-Time-HiRes perl-Unicode-Normalize perl-LWP-Protocol-https!. check if they successfully show version detail to double-check wether installation is successful:
+\begin{lstlisting}[language=bash]
+    xelatex --version
+    pdflatex --version
+    lualatex --version
+    latexmk --version
+\end{lstlisting}
+
+\section{Install \LaTeX{} in Debian Linux Distributions}
+\label{Installation_LaTeX_Debian}
+
+Run \lstinline[language=bash]!sudo apt install texlive-full! in terminal to install. check if they successfully show version detail to double-check wether installation is successful:
+\begin{lstlisting}[language=bash]
+    xelatex --version
+    pdflatex --version
+    lualatex --version
+    latexmk --version
+\end{lstlisting}
+
+\section{Install \LaTeX{} on Mac}
+\label{Installation_LaTeX_MacOS}
