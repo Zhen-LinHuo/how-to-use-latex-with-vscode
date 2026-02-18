@@ -1,2 +1,215 @@
 \chapter{Configuring Visual Studio Code}
 \label{Configuration}
+
+After installing VSCode, it can be found among the installed software menu of your machine. After setting up language, theme, account and synchronisation settings, we can moving forward to next step: \textbf{configuration especially for \LaTeX{}}.
+
+\section{LaTeX Workshop}
+\label{Configuration_LatexWorkshop}
+
+LaTeX Workshop is a classic extension for \LaTeX{} on VSCode, prividing preview, compiling options management, autocomplete, Keywords highlighting, and many other features. It is the main reason choosing VSCode other than other editors to write and build \LaTeX{} documents.
+
+To install LaTeX Workshop, open the \texttt{Extension} option on the left (or keyboard shortcut \texttt{Ctrl+Shift+X}), Search for latex Workshop, and click \texttt{install}.
+
+After installation, click the gear button and select ``\texttt{Settings}'' to enter its configuration part.
+
+As a configuration template can be provided, configuration is not that complex. Append \texttt{tools} to content exists in search bar, and click \texttt{Edit in settings.json} of the first result. By paste following content to the end of the file, you can get basically good experience:
+
+\begin{lstlisting}[language=json]
+    "latex-workshop.latex.autoBuild.run": "never",  // Do not automically compile when saving
+    "latex-workshop.showContextMenu": true, // Enable LaTeX context menu
+    "latex-workshop.intellisense.package.enabled": true,    // Automacally complete command and package based on the packages loaded
+    "latex-workshop.message.error.show": false,
+    "latex-workshop.message.warning.show": false,
+    "latex-workshop.latex.recipe.default": "lastUsed",  // Use last recipe used as default recipe
+    "latex-workshop.view.pdf.internal.synctex.keybinding": "double-click",
+    // Command groups will be used
+    "latex-workshop.latex.tools": [
+        {
+            // LaTeXMK with default settings from extension
+            "name": "latexmk",
+            "command": "latexmk",
+            "args": [
+                "-synctex=1",
+                "-interaction=nonstopmode",
+                "-file-line-error",
+                "-pdf",
+                "-outdir=%OUTDIR%",
+                "%DOCFILE%"
+            ]
+        },
+        {
+            // Compile completely based on .latexmkrc file
+            "name": "latexmk_auto",
+            "command": "latexmk",
+            "args": []
+        },
+        {
+            // Clean up based on .latexmkrc file
+            "name": "latexmk_auto_clean",
+            "command": "latexmk",
+            "args": [
+                "-c"
+            ]
+        },
+        {
+            // LuaLaTeX
+            "name": "lualatex",
+            "command": "lualatex",
+            "args": [
+                "-synctex=1",
+                "-interaction=nonstopmode",
+                "-file-line-error",
+                "%DOCFILE%"
+            ]
+        },
+        {
+            // XeLaTeX
+            "name": "xelatex",
+            "command": "xelatex",
+            "args": [
+                "-synctex=1",
+                "-interaction=nonstopmode",
+                "-file-line-error",
+                "%DOCFILE%"
+            ]
+        },
+        {
+            // PDFLaTeX
+            "name": "pdflatex",
+            "command": "pdflatex",
+            "args": [
+                "-synctex=1",
+                "-interaction=nonstopmode",
+                "-file-line-error",
+                "%DOCFILE%"
+            ]
+        },
+        {
+            // Biber
+            "name": "biber", 
+            "command": "biber",
+            "args": [
+                "%DOCFILE%"
+            ]
+        },
+        {
+            // BibTeX
+            "name": "bibtex",
+            "command": "bibtex",
+            "args": [
+                "%DOCFILE%"
+            ]
+        }
+    ],
+    "latex-workshop.latex.recipes": [
+        {
+            // Compile completely based on .latexmkrc file settings
+            "name": "LaTeXmk (auto)",
+            "tools": [
+                "latexmk_auto"
+            ]
+        },
+        {
+            // Clean up supportive files for the command above
+            "name": "LaTeXmk Clean (auto)",
+            "tools": [
+                "latexmk_auto_clean"
+            ]
+        },
+        // Different compilers with Biber, for documents with both bibliography and table of contents
+        {
+            "name": "lualatex -> biber -> lualatex*2",
+            "tools": [
+                "lualatex",
+                "biber",
+                "lualatex",
+                "lualatex"
+            ]
+        },
+        {
+            "name": "xelatex -> biber -> xelatex*2",
+            "tools": [
+                "xelatex",
+                "biber",
+                "xelatex",
+                "xelatex"
+            ]
+        },
+        {
+            "name": "pdflatex -> biber -> pdflatex*2",
+            "tools": [
+                "pdflatex",
+                "biber",
+                "pdflatex",
+                "pdflatex"
+            ]
+        },
+        // Different compilers with BibTeX, for documents with both bibliography and table of contents
+        {
+            "name": "lualatex -> bibtex -> lualatex*2",
+            "tools": [
+                "lualatex",
+                "bibtex",
+                "lualatex",
+                "lualatex"
+            ]
+        },
+        {
+            "name": "xelatex -> bibtex -> xelatex*2",
+            "tools": [
+                "xelatex",
+                "bibtex",
+                "xelatex",
+                "xelatex"
+            ]
+        },
+        {
+            "name": "pdflatex -> bibtex -> pdflatex*2",
+            "tools": [
+                "pdflatex",
+                "bibtex",
+                "pdflatex",
+                "pdflatex"
+            ]
+        },
+        // Run Compiler/Biber/BibTeX once
+        {
+            "name": "LuaLaTeX",
+            "tools": [
+                "lualatex"
+            ]
+        },
+        {
+            "name": "XeLaTeX",
+            "tools": [
+                "xelatex"
+            ]
+        },
+        {
+            "name": "PDFLaTeX",
+            "tools": [
+                "pdflatex"
+            ]
+        },
+        {
+            "name": "LaTeXmk",
+            "tools": [
+                "latexmk"
+            ]
+        },
+        {
+            "name": "Biber",
+            "tools": [
+                "biber"
+            ]
+        },
+        {
+            "name": "BibTeX",
+            "tools": [
+                "bibtex"
+            ]
+        }
+    ],
+\end{lstlisting}
+
+After these settings, basic configuration for LaTeX Workshop is done. When you finished writing your \LaTeX{} file, you only need to turn to sidebar of LaTeX Workshop and choose and run your compiling recipe at the first time, then you can easily compile your document by simply clicking the \texttt{build} button on the right top side of the editing window of your \texttt{.tex} file (or use keyboard shortcut \texttt{Ctrl+Alt+B}).
