@@ -5,7 +5,6 @@
 # 3 dvipdf；
 # 4 lualatex；
 # 5 xelatex
-
 $pdf_mode = 4;
 
 # Bibliography tool
