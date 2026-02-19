@@ -1,0 +1,28 @@
+- name: How to Use LaTeX with Visual Studio Code
+  href: doc-en-GB.md
+  items:
+  - name: Install LaTeX
+    href: Installation_LaTeX/Installation_LaTeX.md
+    items:
+    - name: Install LaTeX on Windows
+      href: Installation_LaTeX/Windows.md
+    - name: Install LaTeX in RHEL Linux Distributions
+      href: Installation_LaTeX/Linux_RHEL.md
+    - name: Install LaTeX in Debian Linux Distributions
+      href: Installation_LaTeX/Linux_Debian.md
+  - name: Install Visual Studio Code
+    href: Installation_VSCode/Installation_VSCode.md
+    items:
+    - name: Install Visual Studio Code on Windows
+      href: Installation_VSCode/Windows.md
+    - name: Install Visual Studio Code in RHEL Linux Distributions
+      href: Installation_VSCode/Linux_RHEL.md
+    - name: Install Visual Studio Code in Debian Linux Distributions
+      href: Installation_VSCode/Linux_Debian.md
+  - name: Configuring Visual Studio Code
+    href: Configuration/Configuration.md
+    items:
+    - name: LaTeX Workshop
+      href: Configuration/LaTeXWorkshop.md
+    - name: "Advance Technique: Latexmk"
+      href: Configuration/Latexmk.md

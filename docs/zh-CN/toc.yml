@@ -1,0 +1,28 @@
+- name: 如何通过 Visual Studio Code 使用 LaTeX
+  href: doc-zh-CN.md
+  items:
+  - name: 安装 LaTeX
+    href: Installation_LaTeX/Installation_LaTeX.md
+    items:
+    - name: 在 Windows 下安装 LaTeX
+      href: Installation_LaTeX/Windows.md
+    - name: 在 Linux (RHEL 系发行版) 下安装 LaTeX
+      href: Installation_LaTeX/Linux_RHEL.md
+    - name: 在 Linux (Debian 系发行版) 下安装 LaTeX
+      href: Installation_LaTeX/Linux_Debian.md
+  - name: 安装 Visual Studio Code
+    href: Installation_VSCode/Installation_VSCode.md
+    items:
+    - name: 在 Windows 下安装 Visual Studio Code
+      href: Installation_VSCode/Windows.md
+    - name: 在 Linux (RHEL 系发行版) 下安装 Visual Studio Code
+      href: Installation_VSCode/Linux_RHEL.md
+    - name: 在 Linux (Debian 系发行版) 下安装 Visual Studio Code
+      href: Installation_VSCode/Linux_Debian.md
+  - name: 配置 Visual Studio Code
+    href: Configuration/Configuration.md
+    items:
+    - name: LaTeX Workshop
+      href: Configuration/LaTeXWorkshop.md
+    - name: "进阶技巧：Latexmk"
+      href: Configuration/Latexmk.md

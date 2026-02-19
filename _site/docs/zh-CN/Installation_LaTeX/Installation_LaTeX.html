@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>安装 LaTeX | How to Use LaTeX With VSCode </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="安装 LaTeX | How to Use LaTeX With VSCode ">
+      
+      
+      <link rel="icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../toc.html">
+      <meta name="docfx:tocrel" content="../toc.html">
+      
+      <meta name="docfx:rel" content="../../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/Zhen-LinHuo/how-to-use-latex-with-vscode/blob/site/docs/zh-CN/Installation_LaTeX/Installation_LaTeX.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../index.html">
+            <img id="logo" class="svg" src="../../../logo.svg" alt="How to Use LaTeX With VSCode">
+            How to Use LaTeX With VSCode
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="安装-latex">安装 LaTeX</h1>
+
+<p>比较推荐的 LaTeX 安装方式是安装 TeX Live。在其官网提供了安装的<a href="https://www.tug.org/texlive/quickinstall.html">完整指导</a>。</p>
+<p>以下是一些简略的指引：</p>
+<ul>
+<li>对于 <strong>Windows</strong>，建议直接下载 <a href="https://www.tug.org/texlive/acquire-iso.html">ISO 文件</a>，通过挂载该镜像，执行其中的安装程序来进行安装；</li>
+<li>对于 <strong>RHEL 系 Linux 发行版</strong> (如 RHEL, CentOS Stream, Rocky Linux, AlmaLinux 等)，可以使用 ISO 镜像进行安装；</li>
+<li>对于 <strong>Debian 系 Linux 发行版</strong> (如 Debian, Ubuntu, Kubuntu, Xubuntu, Linux Mint 等)，可以直接在终端执行 <code>sudo apt install texlive-full</code>{.bash} 进行安装；</li>
+<li>对于 <strong>MacOS 和 MacOSX</strong>，建议的安装版本为
+<a href="https://www.tug.org/mactex/">MacTeX</a>，它包含全部的 TeX Live，以及一些专用于 Mac 的附加内容；</li>
+</ul>
+<p>虽然 TeX Live 官方建议通过在线安装程序来安装，但是因为网络原因，除非你位于海外地区，否则使用 ISO 镜像可以有效节省安装时间。</p>
+<p>在安装完 TeX Live 后，后续的升级就可通过 <code>tlmgr update --all</code> 进行更新了。如果需要跨版本升级 (如从 TeX Live 2024 升级到 TeX Live 2025)，则最好删除或卸载已有的更新，然后直接安装新版本。一般来说 TeX Live 几乎不需要升级。</p>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/Zhen-LinHuo/how-to-use-latex-with-vscode/blob/site/docs/zh-CN/Installation_LaTeX/Installation_LaTeX.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Advance Technique: Latexmk | How to Use LaTeX With VSCode </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Advance Technique: Latexmk | How to Use LaTeX With VSCode ">
+      
+      
+      <link rel="icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../toc.html">
+      <meta name="docfx:tocrel" content="../toc.html">
+      
+      <meta name="docfx:rel" content="../../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/Zhen-LinHuo/how-to-use-latex-with-vscode/blob/site/docs/en-GB/Configuration/Latexmk.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../index.html">
+            <img id="logo" class="svg" src="../../../logo.svg" alt="How to Use LaTeX With VSCode">
+            How to Use LaTeX With VSCode
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="advance-technique-latexmk">Advance Technique: Latexmk</h1>
+
+<p>As what is shown in recipe settings: if your document has a table of contents, you need to compile it twice with same compiler to have a PDF with everything correct; if your document has a bibliography, you need to compile it first, and process references with BibTeX or Biber, then compile it another time (or twice if it also has a table of contents). For more complex feature, you may even want to run some programme or code during compiling process. All these needs make recipes more and more complex and not that easy to use.</p>
+<p>So here comes the latexmk. It is a Perl script that you only need to run it once, and it will handle all other things for you. <a href="https://mgeier.github.io/latexmk.html">This</a> is a tutorial page I found on Internet showing how to directly use latexmk.</p>
+<p>Moreover, latexmk can work with <code>.latexmkrc</code> file to customise running parameters. And this is why I recommend to add <code>Latexmk (auto)</code> and <code>Latexmk Clean (auto)</code> settings to our LaTeX Workshop settings. The former will build your document completely based on the <code>.latexmkrc</code> file in your directory (if not exists, then reference to user default one or even the system default one), and the latter can correspondingly do clean-up.</p>
+<p>Following are some introduction to several common-used <code>.latexmkrc</code> settings. The <code>.latexmkrc</code> file used for this document can also help you understand how to write such file.</p>
+<h2 id="output-and-compiler">Output And Compiler</h2>
+<p>Define whether and how to generate PDF file with <code>$pdf_mode</code>:</p>
+<ul>
+<li>0: Do not generate PDF file</li>
+<li>1: Use PDFLaTeX</li>
+<li>2: Use PS2PDF</li>
+<li>3: Use DVIPDF</li>
+<li>4: Use LuaLaTeX</li>
+<li>5: Use XeLaTeX</li>
+</ul>
+<p>PDFLaTeX is the most simple one and can run very quick; XeLaTeX and LuaLaTeX works well with UTF-8. These three are mostly used options.</p>
+<p>For reference tools, use <code>$bibtex_use</code></p>
+<ul>
+<li>0: Do not run BibTeX and Biber, will not clean <code>.bbl</code> file</li>
+<li>1: Run BibTeX or Bibier only when <code>.bib</code> file exists, will not clean <code>.bbl</code> file.</li>
+<li>1.5: Run BibTeX or Bibier only when <code>.bib</code> file exists, and clean <code>.bbl</code> file only when <code>.bib</code> file exists</li>
+<li>2: Run BibTeX or Bibier only when <code>.bib</code> file exists, and clean <code>.bbl</code> file no matter <code>.bib</code> file exists or not</li>
+</ul>
+<p>For Biber, a universal setting be like this: <code>biber = &quot;biber %O %S&quot;;</code></p>
+<h2 id="main-file">Main File</h2>
+<p>Main file(s) that need to be compiled can be set with <code>@default_files</code>, and file(s) need to be ignored can be set with <code>@default_excluded_files</code>. Here is one version for reference:</p>
+<pre><code class="lang-perl">@default_files = (&quot;build-en-GB.tex&quot;, &quot;build-zh-CN.tex&quot;);
+@default_excluded_files = ();
+</code></pre>
+<h2 id="output-directory-and-clean-up-settings">Output Directory And Clean-up Settings</h2>
+<p>The output directory can be set with <code>$out_dir</code>. Final output PDF and other supportive files generated during compile will all be placed there.</p>
+<p>Define what file extensions should be cleaned with <code>$out_dir</code>. Keep certain supportive files on purpose might be helpful if your document is a paper that need to be published to a journal.</p>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/Zhen-LinHuo/how-to-use-latex-with-vscode/blob/site/docs/en-GB/Configuration/Latexmk.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

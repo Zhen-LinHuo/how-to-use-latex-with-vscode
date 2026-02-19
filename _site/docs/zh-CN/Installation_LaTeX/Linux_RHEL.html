@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>在 Linux (RHEL 系发行版) 下安装 LaTeX | How to Use LaTeX With VSCode </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="在 Linux (RHEL 系发行版) 下安装 LaTeX | How to Use LaTeX With VSCode ">
+      
+      
+      <link rel="icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../toc.html">
+      <meta name="docfx:tocrel" content="../toc.html">
+      
+      <meta name="docfx:rel" content="../../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/Zhen-LinHuo/how-to-use-latex-with-vscode/blob/site/docs/zh-CN/Installation_LaTeX/Linux_RHEL.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../index.html">
+            <img id="logo" class="svg" src="../../../logo.svg" alt="How to Use LaTeX With VSCode">
+            How to Use LaTeX With VSCode
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="在-linux-rhel-系发行版-下安装-latex">在 Linux (RHEL 系发行版) 下安装 LaTeX</h1>
+
+<p>在下载上文提到的 ISO 镜像后，双击该 ISO
+文件即可挂载。切换到挂载的镜像所在的目录，右键选择在该位置打开终端进入命令行。输入如下命令：</p>
+<pre><code class="lang-bash">sudo perl ./install-tl --no-interaction
+</code></pre>
+<p>按照命令行提示输入密码，即可以管理员权限开始安装。</p>
+<p>安装完成后，我们需要将 TeX Live 的路径添加到 <code>PATH</code> 以便系统和其他程序能够使用，一个可靠的方式是通过 <code>sudo nano ~/.bashrc</code> 编辑当前用户的环境变量，在其下新增一行，内容为：</p>
+<p>‵‵‵
+export PATH=&lt;TeX Live 的安装路径&gt;:$PATH
+export MANPATH=/usr/share/man:&lt;TeX Live 的 man 路径&gt;:$MANPATH
+export INFOPATH=&lt;TeX Live 的 info 路径&gt;:$INFOPATH
+‵‵‵</p>
+<p>以在 Intel x86-64 处理器的计算机上默认安装为例，则该内容具体为：</p>
+<pre><code>export PATH=$PATH:/usr/local/texlive/2025/bin/x86_64-linux:$PATH
+export MANPATH=/usr/share/man:/usr/local/texlive/2025/texmf-dist/doc/man:$MANPATH
+export INFOPATH=/usr/local/texlive/2025/texmf-dist/doc/info:$INFOPATH
+</code></pre>
+<p>随后使用 <code>source ~/.bashrc</code> 刷新环境变量，然后使用 <code>sudo dnf install perl-core perl-Time-HiRes perl-Unicode-Normalize perl-LWP-Protocol-https</code> 安装必要的 perl 包，并依次使用以下指令查看是否有版本信息输出，从而确认安装是否成功：</p>
+<pre><code class="lang-bash">xelatex --version
+pdflatex --version
+lualatex --version
+latexmk --version
+</code></pre>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/Zhen-LinHuo/how-to-use-latex-with-vscode/blob/site/docs/zh-CN/Installation_LaTeX/Linux_RHEL.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

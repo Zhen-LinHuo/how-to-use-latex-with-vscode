@@ -1,0 +1,4 @@
+- name: zh-CN
+  href: docs/zh-CN/doc-zh-CN.md
+- name: en-GB
+  href: docs/en-GB/doc-en-GB.md

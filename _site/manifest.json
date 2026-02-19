@@ -1,0 +1,308 @@
+{
+  "source_base_path": "/home/alrcatraz/Documents/Develop/how-to-use-latex-with-vscode",
+  "xrefmap": "xrefmap.yml",
+  "files": [
+    {
+      "type": "Resource",
+      "output": {
+        "resource": {
+          "relative_path": "index.json"
+        }
+      }
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/en-GB/Configuration/Configuration.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/en-GB/Configuration/Configuration.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/en-GB/Configuration/LaTeXWorkshop.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/en-GB/Configuration/LaTeXWorkshop.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/en-GB/Configuration/Latexmk.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/en-GB/Configuration/Latexmk.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/en-GB/Installation_LaTeX/Installation_LaTeX.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/en-GB/Installation_LaTeX/Installation_LaTeX.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/en-GB/Installation_LaTeX/Linux_Debian.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/en-GB/Installation_LaTeX/Linux_Debian.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/en-GB/Installation_LaTeX/Linux_RHEL.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/en-GB/Installation_LaTeX/Linux_RHEL.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/en-GB/Installation_LaTeX/Windows.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/en-GB/Installation_LaTeX/Windows.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/en-GB/Installation_VSCode/Installation_VSCode.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/en-GB/Installation_VSCode/Installation_VSCode.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/en-GB/Installation_VSCode/Linux_Debian.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/en-GB/Installation_VSCode/Linux_Debian.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/en-GB/Installation_VSCode/Linux_RHEL.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/en-GB/Installation_VSCode/Linux_RHEL.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/en-GB/Installation_VSCode/Windows.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/en-GB/Installation_VSCode/Windows.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/en-GB/doc-en-GB.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/en-GB/doc-en-GB.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "docs/en-GB/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "docs/en-GB/toc.html"
+        },
+        ".json": {
+          "relative_path": "docs/en-GB/toc.json"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/zh-CN/Configuration/Configuration.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/zh-CN/Configuration/Configuration.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/zh-CN/Configuration/LaTeXWorkshop.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/zh-CN/Configuration/LaTeXWorkshop.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/zh-CN/Configuration/Latexmk.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/zh-CN/Configuration/Latexmk.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/zh-CN/Installation_LaTeX/Installation_LaTeX.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/zh-CN/Installation_LaTeX/Installation_LaTeX.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/zh-CN/Installation_LaTeX/Linux_Debian.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/zh-CN/Installation_LaTeX/Linux_Debian.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/zh-CN/Installation_LaTeX/Linux_RHEL.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/zh-CN/Installation_LaTeX/Linux_RHEL.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/zh-CN/Installation_LaTeX/Windows.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/zh-CN/Installation_LaTeX/Windows.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/zh-CN/Installation_VSCode/Installation_VSCode.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/zh-CN/Installation_VSCode/Installation_VSCode.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/zh-CN/Installation_VSCode/Linux_Debian.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/zh-CN/Installation_VSCode/Linux_Debian.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/zh-CN/Installation_VSCode/Linux_RHEL.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/zh-CN/Installation_VSCode/Linux_RHEL.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/zh-CN/Installation_VSCode/Windows.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/zh-CN/Installation_VSCode/Windows.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/zh-CN/doc-zh-CN.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/zh-CN/doc-zh-CN.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "docs/zh-CN/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "docs/zh-CN/toc.html"
+        },
+        ".json": {
+          "relative_path": "docs/zh-CN/toc.json"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "index.md",
+      "output": {
+        ".html": {
+          "relative_path": "index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "toc.html"
+        },
+        ".json": {
+          "relative_path": "toc.json"
+        }
+      },
+      "version": ""
+    }
+  ],
+  "groups": [
+    {
+      "xrefmap": "xrefmap.yml"
+    }
+  ]
+}
