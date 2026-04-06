@@ -53,6 +53,24 @@ If you are using older system, then you need to install with \texttt{yum}:
     sudo yum install code # code-insiders if you want VSCode Insider
 \end{lstlisting}
 
+\section{Install Visual Studio Code in openSUSE Linux Distributions}
+\label{Installation_VSCode_openSUSE}
+
+In openSUSE distributions, you can follow following instructions to add VSCode to your software sources, for easier installation and updates.
+
+First, add repository and GPG key of VSCode to your system:
+\begin{lstlisting}[language=bash]
+    sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc &&
+echo -e "[code]\nname=Visual Studio Code\nbaseurl=https://packages.microsoft.com/yumrepos/vscode\nenabled=1\nautorefresh=1\ntype=rpm-md\ngpgcheck=1\ngpgkey=https://packages.microsoft.com/keys/microsoft.asc" | sudo tee /etc/zypp/repos.d/vscode.repo > /dev/null
+\end{lstlisting}
+
+Install VSCode with \texttt{zypper}:
+\begin{lstlisting}[language=bash]
+    sudo zypper install code # code-insiders if you want VSCode Insider
+\end{lstlisting}
+
+Also, you can install VSCode via YaST Software Management or Myrlyn Software Management.
+
 \section{Install Visual Studio Code in Debian Linux Distributions}
 \label{Installation_VSCode_Debian}
 

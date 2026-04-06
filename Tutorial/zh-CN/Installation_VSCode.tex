@@ -53,6 +53,24 @@
     sudo yum install code # 如果你喜欢尝鲜，把 code 换成 code-insiders
 \end{lstlisting}
 
+\section{在 Linux (openSUSE 系发行版) 下安装 Visual Studio Code}
+\label{Installation_VSCode_openSUSE}
+
+在 openSUSE 系发行版下，可以通过如下方式将 VSCode 加入软件源，从而便于安装和更新。
+
+首先，将 VSCode 存储库和密钥安装到系统：
+\begin{lstlisting}[language=bash]
+    sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc &&
+echo -e "[code]\nname=Visual Studio Code\nbaseurl=https://packages.microsoft.com/yumrepos/vscode\nenabled=1\nautorefresh=1\ntype=rpm-md\ngpgcheck=1\ngpgkey=https://packages.microsoft.com/keys/microsoft.asc" | sudo tee /etc/zypp/repos.d/vscode.repo > /dev/null
+\end{lstlisting}
+
+使用这个命令来更新软件源缓存并安装 VSCode：
+\begin{lstlisting}[language=bash]
+    sudo zypper install code # 如果你喜欢尝鲜，把 code 换成 code-insiders
+\end{lstlisting}
+
+当然，你也可以选择使用 YaST 软件管理或者 Myrlyn 软件管理工具来完成最后的安装步骤。
+
 \section{在 Linux (Debian 系发行版) 下安装 Visual Studio Code}
 \label{Installation_VSCode_Debian}
 
